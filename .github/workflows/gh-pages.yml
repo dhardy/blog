@@ -18,7 +18,7 @@ jobs:
       url: https://dhardy.github.io/blog/
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
@@ -29,13 +29,13 @@ jobs:
         run: mdbook build
 
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v6
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './book'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v5
